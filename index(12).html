@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b20">
+  <meta name="description" content="Brandon Holdings is updating its online presence. Contact our team for business solutions, consulting, marketing and creative services.">
+  <title>Brandon Holdings | We've Moved</title>
+  <style>
+    :root {
+      --teal: #20b7b0;
+      --teal-dark: #087d7b;
+      --ink: #071b20;
+      --ink-soft: #102b30;
+      --muted: #a9bec0;
+      --white: #f7fbfa;
+      --line: rgba(255,255,255,.13);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 82% 14%, rgba(32,183,176,.22), transparent 34rem),
+        radial-gradient(ellipse at 10% 90%, rgba(8,125,123,.18), transparent 32rem),
+        linear-gradient(135deg, #06171b 0%, #0a2429 52%, #07191e 100%);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .12;
+      background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+    }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto; position: relative; }
+    header { padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 13px; text-decoration: none; color: inherit; }
+    .brand img { width: 66px; height: 66px; object-fit: contain; }
+    .brand-copy { display: flex; flex-direction: column; gap: 4px; }
+    .brand-copy strong { font-family: Georgia, "Times New Roman", serif; font-size: 19px; letter-spacing: .08em; }
+    .brand-copy span { color: var(--teal); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; }
+    .status { display: inline-flex; align-items: center; gap: 9px; color: #c6d9d8; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 14px var(--teal); }
+    main { flex: 1; display: grid; place-items: center; padding: 76px 0 88px; }
+    .hero { max-width: 850px; text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--teal); font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+    .eyebrow::before, .eyebrow::after { content: ""; width: 30px; height: 1px; background: var(--teal); opacity: .75; }
+    h1 { margin: 25px 0 18px; font-size: clamp(42px, 7vw, 76px); line-height: .99; letter-spacing: -.055em; font-weight: 650; }
+    h1 span { color: var(--teal); }
+    .lead { max-width: 650px; margin: 0 auto; color: #c0d0d1; font-size: clamp(16px, 2vw, 19px); line-height: 1.75; }
+    .move-card {
+      max-width: 650px; margin: 38px auto 0; padding: 24px;
+      border: 1px solid rgba(32,183,176,.34); border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      box-shadow: 0 24px 80px rgba(0,0,0,.22); backdrop-filter: blur(12px);
+    }
+    .move-card p { margin: 0 0 17px; color: #c5d6d6; font-size: 14px; line-height: 1.6; }
+    .domain-label { color: #7f9b9e; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 8px; }
+    .new-domain { color: var(--white); font-size: clamp(20px, 4vw, 29px); font-weight: 650; overflow-wrap: anywhere; }
+    .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .btn { min-height: 50px; padding: 0 24px; display: inline-flex; justify-content: center; align-items: center; border-radius: 7px; text-decoration: none; font-size: 13px; font-weight: 750; transition: transform .2s, background .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--teal); color: #062326; box-shadow: 0 9px 30px rgba(32,183,176,.2); }
+    .btn-primary:hover { background: #50d0c8; }
+    .btn-secondary { color: var(--white); border: 1px solid rgba(255,255,255,.24); background: rgba(255,255,255,.035); }
+    .btn-secondary:hover { border-color: var(--teal); }
+    .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 62px auto 0; max-width: 900px; }
+    .service { padding: 18px 12px; border-top: 1px solid var(--line); color: #c4d3d3; font-size: 12px; letter-spacing: .04em; }
+    .service strong { display: block; margin-bottom: 7px; color: var(--white); font-size: 13px; }
+    footer { border-top: 1px solid var(--line); padding: 22px 0; color: #81999c; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-inner a { color: var(--teal); text-decoration: none; }
+    @media (max-width: 680px) {
+      header { padding: 19px 0; }
+      .brand img { width: 52px; height: 52px; }
+      .brand-copy strong { font-size: 15px; }
+      .status { font-size: 9px; letter-spacing: .08em; }
+      main { padding: 62px 0; }
+      .services { grid-template-columns: repeat(2, 1fr); margin-top: 42px; }
+      .move-card { padding: 21px 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#" aria-label="Brandon Holdings home">
+        <img src="https://demo.brandonholdingsgroup.com/wp-content/uploads/2025/09/Screenshot__33_-removebg-preview.webp" alt="Brandon Holdings logo">
+        <span class="brand-copy">
+          <strong>BRANDON HOLDINGS</strong>
+          <span>Strategic Business Solutions</span>
+        </span>
+      </a>
+      <div class="status">Our website has moved</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="eyebrow">A new digital home</div>
+      <h1>We’re moving<br><span>forward.</span></h1>
+      <p class="lead">We are currently updating our online presence. Brandon Holdings remains committed to delivering practical business solutions, strategic support and creative services.</p>
+
+      <div class="move-card">
+        <p>For enquiries, service information or business support, contact our team directly.</p>
+        <div class="domain-label">Brandon Holdings</div>
+        <div class="new-domain">Business solutions. Strategic growth.</div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:info@brandonholdingsgroup.com">Contact us <span aria-hidden="true">&nbsp; ↗</span></a>
+        </div>
+      </div>
+
+      <div class="services" aria-label="Our services">
+        <div class="service"><strong>Business Operations</strong>Systems, processes and operational support</div>
+        <div class="service"><strong>Labour Law</strong>Workplace guidance and compliance support</div>
+        <div class="service"><strong>Consultation</strong>Business strategy and growth planning</div>
+        <div class="service"><strong>Creative Services</strong>Marketing, photography and videography</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Brandon Holdings. All rights reserved.</span>
+      <span>Transforming businesses through creative solutions.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
